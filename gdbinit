@@ -3,17 +3,16 @@
 #source ~/.gdbinit.py
 
 set extended-prompt \e[1m\]\e[38;5;196m\]- GNU Debugger \v -----------------------------------------------------------------------------------------------\e[0m\]\n>>>\ 
-#set extended-prompt \e[1m\]\e[38;5;196m\](gdb-\v)\e[0m\]\ 
-#set extended-prompt \e[1m\]\e[38;5;12m\](gdb-\v)\e[0m\]\ 
 
-set auto-load safe-path /home/vagrant/
+# Uncomment if you use vagrant and trust your files - VJR
+#set auto-load safe-path /home/vagrant/
 set disassembly-flavor intel
 
 set confirm off
 set verbose off
 
-#set history filename ~/.gdbhist
-#set history save
+set history filename ~/.gdbhist
+set history save
 
 #set output-radix 0x10
 #set input-radix  0x10
@@ -26,6 +25,7 @@ set print array-indexes
 set height 0
 set width  0
 
+# voidwalker is much more powerful but has flaky support on my systems - VJR
 #python from voidwalker import voidwalker
 #define hook-stop
 #  voidwalker hook-stop
@@ -41,6 +41,8 @@ set $SHOWDATAWIN = 0
 set $SHOWREGCHANGES = 0
 # use colorized output or not
 set $USECOLOR = 1
+
+# set $64BITS = 0 if your debugging 32bit executables - VJR
 set $64BITS = 1
 
 
